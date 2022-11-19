@@ -22,7 +22,6 @@ int main(){
     {   
         arr[i]=randNum();
     }
-    
 
     cout <<"Dizi:[";
         for (int i = 0; i < leng; i++)
