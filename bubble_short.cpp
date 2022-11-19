@@ -16,7 +16,7 @@ int main(){
     int test=0;
     srand(time(0));
 
-    cout <<"Dizi boyutunu belirleyiniz:";
+    cout <<"Enter Array Size:";
     cin >> leng;
 
     
@@ -28,7 +28,7 @@ int main(){
         arr[i]=randNum();
     }
 
-    cout <<"Dizi:[";
+    cout <<"Array:[";
         for (int i = 0; i < leng; i++)
     {   
         cout << arr[i]<<",";
@@ -50,8 +50,8 @@ int main(){
         }
         
     }
-    cout <<test<<" adimda duzenlendi."<<endl;
-    cout <<"Dizi:[";
+    cout <<test<<" steps"<<endl;
+    cout <<"Array:[";
     for (int i = 0; i < leng; i++)
     {   
         cout << arr[i]<<",";
