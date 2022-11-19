@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <conio.h>
+#include <time.h>
 
 using namespace std;
 
@@ -11,13 +12,17 @@ int randNum(){
 }
 int main(){
     int leng;
+    bool traning=true;
+    int test=0;
+    srand(time(0));
+
     cout <<"Dizi boyutunu belirleyiniz:";
     cin >> leng;
 
     
     int arr[leng];
    
-   //create array
+   // Create Array
     for (int i = 0; i < leng; i++)
     {   
         arr[i]=randNum();
@@ -29,5 +34,30 @@ int main(){
         cout << arr[i]<<",";
     }
     cout <<"]"<< endl;
+
+    //Bubble Short
+    while(traning){
+        traning=false;
+        for (int j = 0; j < leng; j++)
+        {
+            if(arr[j]>arr[j+1]){
+                int v=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=v;
+                traning=true;
+                test++;
+            }
+        }
+        
+    }
+    cout <<test<<" adimda duzenlendi."<<endl;
+    cout <<"Dizi:[";
+    for (int i = 0; i < leng; i++)
+    {   
+        cout << arr[i]<<",";
+    }
+    cout <<"]"<< endl;    
+
+
     getch();
 }
