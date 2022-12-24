@@ -6,58 +6,60 @@
 using namespace std;
 
 // Random number generator
-int randNum(){
-    int min=1,max=100;
-    return min+rand()%max ;  
+int randNum()
+{
+    int min = 1, max = 100;
+    return min + rand() % max;
 }
-int main(){
+int main()
+{
     int leng;
-    bool traning=true;
-    int test=0;
+    bool traning = true;
+    int test = 0;
     srand(time(0));
 
-    cout <<"Enter Array Size:";
+    cout << "Enter Array Size:";
     cin >> leng;
 
-    
     int arr[leng];
-   
-   // Create Array
+
+    // Create Array
     for (int i = 0; i < leng; i++)
-    {   
-        arr[i]=randNum();
+    {
+        arr[i] = randNum();
     }
 
-    cout <<"Array:[";
-        for (int i = 0; i < leng; i++)
-    {   
-        cout << arr[i]<<",";
+    cout << "Array:[";
+    for (int i = 0; i < leng; i++)
+    {
+        i == leng - 1 ? cout << arr[i] : cout << arr[i] << ",";
     }
-    cout <<"]"<< endl;
+    cout << "]" << endl;
 
-    //Bubble Short
-    while(traning){
-        traning=false;
+    // Bubble Short
+    while (traning)
+    {
+        traning = false;
         for (int j = 0; j < leng; j++)
         {
-            if(arr[j]>arr[j+1]){
-                int v=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=v;
-                traning=true;
+            if (arr[j] > arr[j + 1])
+            {
+                int v = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = v;
+                traning = true;
                 test++;
             }
         }
-        
     }
-    cout <<test<<" steps"<<endl;
-    cout <<"Array:[";
+    cout << test << " steps" << endl;
+    // New Array
+    cout << "New Array:[";
     for (int i = 0; i < leng; i++)
-    {   
-        cout << arr[i]<<",";
+    {
+        i == leng - 1 ? cout << arr[i] : cout << arr[i] << ",";
     }
-    cout <<"]"<< endl;    
-
+    cout << "]" << endl;
 
     getch();
 }
